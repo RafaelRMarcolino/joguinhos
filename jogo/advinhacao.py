@@ -1,6 +1,6 @@
 import random
 print('************************')
-print('  Jogo de de advinhar')
+print('  Jogo de advinhar')
 print('************************')
 
 numeroSorte = random.randrange(0, 102, 2)
