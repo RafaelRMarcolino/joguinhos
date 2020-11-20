@@ -1,48 +1,51 @@
-import random
-print('************************')
-print('  Jogo de advinhar')
-print('************************')
+def jogo():
 
-numeroSorte = random.randrange(0, 102, 2)
-print(numeroSorte)
-print('Escolha o nivel')
-nivel = int(input('1 para Facil, 2 para Medio, 3 para Dificil '))
+    import random
+    print('************************')
+    print('  Jogo de advinhar')
+    print('************************')
 
-if(nivel == 1):
-    chances = 8
+    numeroSorte = random.randrange(0, 102, 2)
+    print(numeroSorte)
+    print('Escolha o nivel')
+    nivel = int(input('1 para Facil, 2 para Medio, 3 para Dificil '))
 
-elif nivel == 2:
-    chances = 5
+    if(nivel == 1):
+        chances = 8
 
-elif nivel == 3:
-    chances = 3
+    elif nivel == 2:
+        chances = 5
 
-print("Voce tem {} chances ".format(chances))
+    elif nivel == 3:
+        chances = 3
 
-acertou = 0
-for acertou in range(chances): 
+    print("Voce tem {} chances ".format(chances))
 
-    chute = int(input('Digite um numero ?'))
-    print('o numero que voce digitou é {}'.format(chute))
+    acertou = 0
+    for acertou in range(chances): 
 
-    if(chute == numeroSorte):
-        print('parabens voce acertou o numero éra {}\n'.format(numeroSorte))
-        break
+        chute = int(input('Digite um numero ?'))
+        print('o numero que voce digitou é {}'.format(chute))
 
-    
-    elif(chute != numeroSorte):
-        print('voce errou tente novamente')
+        if(chute == numeroSorte):
+            print('parabens voce acertou o numero éra {}\n'.format(numeroSorte))
+            break
 
-        if(chute > numeroSorte):
-            print('O numero que voce digitou e maior tento um menor\n')
+        
+        elif(chute != numeroSorte):
+            print('voce errou tente novamente')
 
-        elif(chute < numeroSorte):
-            print('O numero e menor tente um maior\n')    
+            if(chute > numeroSorte):
+                print('O numero que voce digitou e maior tento um menor\n')
+
+            elif(chute < numeroSorte):
+                print('O numero e menor tente um maior\n')    
 
 
 
-print('Voce perdeu tente novamente')
-print('fim')
+    print('Voce perdeu tente novamente')
+    print('O numero que tinha que acertar era {} '.format(numeroSorte))
+    print('fim do jogo')
 
 
 

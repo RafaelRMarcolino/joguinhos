@@ -1,38 +1,41 @@
-print('****************')
-print('     Forca      ')
-print('****************')
+def jogo():
 
-palavra_forca = 'metallica'.upper()
-palavra_espaco = ['_' for letra in palavra_forca]
 
-acertou = False
-enforcou = False
-errou = 0
+    print('****************')
+    print('     Forca      ')
+    print('****************')
 
-while(not acertou and not enforcou):
-    
-    chute =input('Escolha uma letra ?')
-    chute = chute.strip().upper()
+    palavra_forca = 'metallica'.upper()
+    palavra_espaco = ['_' for letra in palavra_forca]
 
-    if(chute in palavra_forca):    
-        index = 0
-        for letra in palavra_forca:
-            if(chute == letra):
-                palavra_espaco[index] = letra
-            index = index + 1
-    else:
-        errou = errou + 1
-    enforcou = errou == 8   
-    acertou = '_' not in palavra_espaco
+    acertou = False
+    enforcou = False
+    errou = 0
 
-    print('errou {}'.format(errou))
-    print('acertou {} '.format(acertou))
-    print(palavra_espaco)   
+    while(not acertou and not enforcou):
+        
+        chute =input('Escolha uma letra ?')
+        chute = chute.strip().upper()
 
-if(acertou):
-    print('Parabens voce ganhou')
+        if(chute in palavra_forca):    
+            index = 0
+            for letra in palavra_forca:
+                if(chute == letra):
+                    palavra_espaco[index] = letra
+                index = index + 1
+        else:
+            errou = errou + 1
+        enforcou = errou == 8   
+        acertou = '_' not in palavra_espaco
 
-elif (enforcou):
-    print('fim do jogo, Voce perdeu')
+        print('errou {}'.format(errou))
+        print('acertou {} '.format(acertou))
+        print(palavra_espaco)   
+
+    if(acertou):
+        print('Parabens voce ganhou')
+
+    elif (enforcou):
+        print('fim do jogo, Voce perdeu')
 
 
